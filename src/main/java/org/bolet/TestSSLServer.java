@@ -207,6 +207,7 @@ public class TestSSLServer {
 			+ (vulnBEAST ? "vulnerable" : "protected"));
 		System.out.println("CRIME status: "
 			+ (compress ? "vulnerable" : "protected"));
+		
 	}
 
 	/*
