@@ -86,13 +86,13 @@ public class SSLSocketClientWithClientAuth {
              * if asked by the server.  Use the implementation's
              * default TrustStore and secureRandom routines.
              */
+        	
             SSLSocketFactory factory = null;
             try {
                 SSLContext ctx;
                 KeyManagerFactory kmf;
                 KeyStore ks;
                 char[] passphrase = "passphrase".toCharArray();
-
                 ctx = SSLContext.getInstance("TLS");
                 kmf = KeyManagerFactory.getInstance("SunX509");
                 ks = KeyStore.getInstance("JKS");
@@ -101,12 +101,12 @@ public class SSLSocketClientWithClientAuth {
 
                 kmf.init(ks, passphrase);
                 ctx.init(kmf.getKeyManagers(), null, null);
-
+         
                 factory = ctx.getSocketFactory();
             } catch (Exception e) {
                 throw new IOException(e.getMessage());
             }
-
+        	
             SSLSocket socket = (SSLSocket)factory.createSocket(host, port);
 
             /*
