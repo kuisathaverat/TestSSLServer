@@ -11,11 +11,11 @@
  stage 'Download sources'
  node {
     tool name: 'Default', type: 'hudson.plugins.git.GitTool'
-     git 'https://github.com/kuisathaverat/TestSSLServer.git'
+    git 'https://github.com/kuisathaverat/TestSSLServer.git'
  }
  stage 'Compile sources'
  node {
-    tool name: 'maven3', type: 'hudson.tasks.Maven$MavenInstallation'
+    //tool name: 'maven3', type: 'hudson.tasks.Maven$MavenInstallation'
     sh 'mvn clean compile'
  }
  stage 'Execute Test SSL support features'
